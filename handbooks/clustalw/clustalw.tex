@@ -1,0 +1,96 @@
+
+\documentclass[10pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+
+\title{Quick Guide to clustalw tool.}
+
+\begin{document}
+
+\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\textbf{ClustalW}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{Qu'e es ClustalW? }
+BLAST (Basic Local Alignment Search Tool) es un programa bioinformático de
+alineamiento de secuencias biol'ogicas, ya sea de ADN, ARN o de prote'inas,
+comparando una secuencia problema con m'ultiples secuencias dentro de una base
+de datos. 
+
+\subsection{Alineamiento m'ultiple con un archivo de secuencias.}
+\textbf{clustalw} - Herramienta para alineamiento m'ultiple de secuencias.
+  \begin{enumerate}
+
+    \item \textbf{Ejecutar el alineamiento m'ultiple con clustalw}
+      \begin{verbatim}
+        clustalw -infile=input.fasta -seqnos=ON
+ -gapopen=2 -gapext=0.5
+      \end{verbatim}
+  \end{enumerate}
+
+
+\subsection{Alineamiento m'ultiple interactivo.}
+\begin{enumerate}
+  \item Ejecutar desde la terminal \textbf{clustalw}
+  \item Seleccionar la opci'on 1 "Sequence Input From Disc" y especificar el
+    nombre del archivo de entrada.
+  \item Seleccionar la opcion 2 "Multiple alignments".
+\item Seleccionar la opci'on 9 "Output format options", a continuaci'on
+  seleccionar la opci'on 3 "Toggle GCG/MSF format output" para guardar la salida
+  en formato "MSF".
+\item Presionar la tecla Enter para regresar al menu anterior.
+\item Seleccionar la opci'on 1 "Do complete multiple alignment now
+  (Slow/Accurate)"
+\end{enumerate}
+
+\section{Recursos}
+Great symbol look-up site:
+Bash commands Reference\href{https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je}{Dev
+Journal 101 Bash commands for beginners to experts}\\
+\vfill
+\hrule
+~\\
+Jos'e Manuel S, \href{http://github.com/J0MS}{http://github.com/J0MS/}
+\end{multicols}
+
+\end{document}

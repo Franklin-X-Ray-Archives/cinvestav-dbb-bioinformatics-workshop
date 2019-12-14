@@ -1,0 +1,80 @@
+
+\documentclass[10pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage{graphicx}
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+
+\title{Quick Guide to Linux python.}
+
+\begin{document}
+
+\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\textbf{Python}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{Qu'e es Python? }
+Python es un lenguaje interpretado, de tipado din'amico, multiparadigma, de alto nivel
+desarrollado y mantenido por la Python Software Foundation.\\
+  \includegraphics[width=0.075\textwidth]{python-logo}\\
+\section{Instalar int'erprete y paquetes de Python.}
+Instalar el int'erprete de Python en sistemas operativos derivados de Ubuntu
+(Ej. Biolinux):\vspace{0.5cm}\\
+Instalar python3 \textbf{sudo apt-get install python3}\\
+Instalar python2 \textbf{sudo apt-get install python}
+\vspace{0.5cm}\\
+Instalar la herramienta de instalaci'on de paquetes de Python en sistemas operativos GNU/Linux:
+Instalar pip3 para paquetes en python3 con: \textbf{sudo apt-get install python3-pip}\\
+Instalar pip para paquetes en python con: \textbf{sudo apt-get install python-pip}
+
+
+
+\section{Recursos}
+Python Software Foundation: \href{http://www.python.org/}{Python Official Site}\\
+Python Official Documentation \href{https://docs.python.org/3/ }{Python Documentation}\\
+Python Package Index\href{https://pypi.org/}{PyPI}\\ 
+\vfill
+\hrule
+~\\
+Jose Manuel S, \href{http://github.com/J0MS}{http://github.com/J0MS}
+\end{multicols}
+
+\end{document}

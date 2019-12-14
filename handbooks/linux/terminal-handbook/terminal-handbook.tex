@@ -1,0 +1,118 @@
+
+\documentclass[10pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+
+\title{Quick Guide to Linux Terminal.}
+
+\begin{document}
+
+\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\textbf{Terminal}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{Qu'e es un emulador de terminal? }
+Un Emulador de terminal es un programa que ejecuta instrucciones para
+interactuar con el sistema operativo, realizar tareas administrativas o invocar
+aplicaciones locales o en red. Estas instrucciones se escriben en forma de
+conjuntos comandos.
+
+\section{Comandos para obtener ayuda atrav'es de la terminal.}
+\textbf{man} - Muestra en patalla los manuales de usuario del comando solicitado.
+Uso: man comando
+
+\section{Comandos para creaci'on, lectura, localizaci'on y eliminaci'on de archivos.}
+\textbf{touch} - Crea un nuevo archivo vacio en el directorio actual de trabajo. 
+Uso: touch archivo
+\\
+\textbf{less} - Lee el contenido de un archivo y lo imprime en pantalla. 
+Uso: less archivo
+\\
+\textbf{find} - Busca un archivo en un directorio.. 
+Uso: find ruta archivo
+\\
+\textbf{cp} - Copia un archivo de una ruta a otra.
+Uso: cp origen-del-archivo destino-del-archivo
+\\
+\textbf{mv} - Mueve un archivo de un directorio a otro.
+Uso: mv origen-del-archivo destino-del-archivo
+\\
+\textbf{rm} - Elimina uno o m'as archivos.
+Uso: rm archivo1 archivo2
+
+\section{Comandos para inspeccionar y navegar en un 'arbol de directorios.}
+\textbf{mkdir} - Comando para crear un nuevo directorio.
+Uso: mkdir nombre-del-directorio
+\\
+\textbf{dir} - Imprime una lista de directorios dentro del directorio actual de trabajo.
+Uso: dir
+\\
+\textbf{pwd} - Imprime la ruta actual de trabajo
+Uso: pwd
+\\
+\textbf{ls} - Imprime una lista de objetos dentro del directorio actual de trabajo
+Uso: ls
+\\
+\textbf{cd} - Cambiar de directorio.
+Uso: cd ruta / cd .. Subir un nivel jer'arquico en el 'arbol de directorios.
+
+\section{Comandos para administrar procesos.}
+\textbf{ps} - Comando para obtener una lista de procesos y sus identificadores.
+Uso: ps aux | grep nombre-del-programa
+\\
+\textbf{kill} - Elimina un proceso activo.
+Uso: kill SIGNAL ID
+\\
+killall SIGNAL NOMBRE
+
+\section{Recursos}
+Great symbol look-up site:
+Bash commands Reference\href{https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je}{Dev
+Journal 101 Bash commands for beginners to experts}\\
+\vfill
+\hrule
+~\\
+Jos'e Manuel S, \href{http://github.com/J0MS  }{http://github.com/J0MS/}
+\end{multicols}
+
+\end{document}

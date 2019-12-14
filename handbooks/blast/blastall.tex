@@ -1,0 +1,138 @@
+
+\documentclass[10pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+
+\title{Quick Guide to Blastall tool.}
+
+\begin{document}
+
+\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\textbf{BLAST.Basic Local Alignment Search Tool}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{Qu'e es BLAST? }
+BLAST (Basic Local Alignment Search Tool) es un programa bioinformático de
+alineamiento de secuencias biol'ogicas, ya sea de ADN, ARN o de prote'inas,
+comparando una secuencia problema con m'ultiples secuencias dentro de una base
+de datos. 
+
+\subsection{blastn.}
+\textbf{blastn} - Herramienta para alineamiento de secuencias de nucle'otidos
+  \begin{enumerate}
+    \item \textbf{Descargar la base de datos de nucle'otidos}\\
+      \href{ftp://ftp.ncbi.nih.gov/blast/db/FASTA/yeast.nt.gz}{wget
+        ftp://ftp.ncbi.nih.gov/blast/db/FASTA/yeast.nt.gz}
+    \item \textbf{Descomprimir el archivo *.nt.gz} \\
+      \begin{verbatim}
+  gunzip yeast.nt.gz
+  \end{verbatim}
+
+    \item \textbf{Formatear la base de datos con formatdb}
+      \begin{verbatim}
+  formatdb -i yeast.nt -p F -o T
+      \end{verbatim}
+
+
+    \item \textbf{Ejecutar el alineamiento con blastn}
+      \begin{verbatim}
+  blastall -p blastn -d yeast.nt -i input.fasta 
+-o result.out
+      \end{verbatim}
+  \end{enumerate}
+
+\subsection{blastp.}
+\textbf{blastn} - Herramienta para alineamiento de secuencias de amino'acidos.
+  \begin{enumerate}
+    \item \textbf{Descargar la base de datos de amino'acidos}\\
+      \href{ftp://ftp.ncbi.nih.gov/blast/db/FASTA/yeast.aa.gz}{wget
+        ftp://ftp.ncbi.nih.gov/blast/db/FASTA/yeast.aa.gz}
+    \item \textbf{Descomprimir el archivo *.aa.gz} \\
+      \begin{verbatim}
+  gunzip yeast.aa.gz
+  \end{verbatim}
+
+    \item \textbf{Formatear la base de datos con formatdb}
+      \begin{verbatim}
+  formatdb -i yeast.aa -p T -o T
+      \end{verbatim}
+
+
+    \item \textbf{Ejecutar el alineamiento con blastp}
+      \begin{verbatim}
+  blastall -p blastp -d yeast.aa -i input.fasta -T T
+-o result.out
+      \end{verbatim}
+  \end{enumerate}
+
+\subsection{blastx.}
+\textbf{blastx} - B'usqueda de secuencias de prote'inas a partir de secuencias
+de nucle'otidos. 
+  \begin{enumerate}
+
+    \item \textbf{A partir del archivo *.nt , formatear la base de datos con formatdb}
+      \begin{verbatim}
+  formatdb -i yeast.nt -p F -o T
+      \end{verbatim}
+
+
+    \item \textbf{Ejecutar el alineamiento con blastx}
+      \begin{verbatim}
+  blastall -p blastx -d yeast.nt -i input.fasta -T T 
+-o result.html
+      \end{verbatim}
+  \end{enumerate}
+
+
+\section{Recursos}
+FTP Blast DataBase \href{ftp://ftp.ncbi.nih.gov/blast/db/} {FTP NCBI Database}\\
+Documentation for \textbf{formatdb} options
+\href{https://www.ncbi.nlm.nih.gov/Class/BLAST/formatdbopts.txt} {Options for
+  formatdb tool} 
+\vfill
+\hrule
+~\\
+Jos'e Manuel S, \href{http://github.com/J0MS  }{http://github.com/J0MS/}
+\end{multicols}
+
+\end{document}
