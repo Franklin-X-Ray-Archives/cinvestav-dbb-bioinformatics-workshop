@@ -1,0 +1,5 @@
+Lane	Treatment	Label
+1	Control	Control1
+2	Control	Control2
+3	Treated	Treated1
+4	Treated	Treated2
