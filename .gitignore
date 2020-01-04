@@ -24,3 +24,10 @@ handbooks/python/python-handbook/python-handbook.out
 handbooks/python/python-handbook/python-handbook.synctex.gz
 handbooks/python/python-handbook/python-logo.png
 
+#RNA Seq
+handbooks/rna-seq/auto/rna-seq-pipeline-analysis.el
+handbooks/rna-seq/rna-seq-pipeline-analysis.aux
+handbooks/rna-seq/rna-seq-pipeline-analysis.log
+handbooks/rna-seq/rna-seq-pipeline-analysis.out
+handbooks/rna-seq/rna-seq-pipeline-analysis.synctex.gz
+handbooks/rna-seq/rna-seq-pipeline-analysis.tex
