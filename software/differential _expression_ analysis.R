@@ -78,4 +78,4 @@ dev.off()
 
 #To obtain genelists for all genes and FDR, you could try
 tab<-topTags(et, n=nrow(y))
-write.table(tab, file="FDR-control-tratado.txt", sep=" ")
+write.table(tab, file="FDR_control-treatment.txt", sep=" ")
