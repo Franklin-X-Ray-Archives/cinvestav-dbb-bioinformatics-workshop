@@ -31,3 +31,11 @@ handbooks/rna-seq/rna-seq-pipeline-analysis.log
 handbooks/rna-seq/rna-seq-pipeline-analysis.out
 handbooks/rna-seq/rna-seq-pipeline-analysis.synctex.gz
 handbooks/rna-seq/rna-seq-pipeline-analysis.tex
+
+#Proteomics
+handbooks/proteomics/auto/
+handbooks/proteomics/proteomics-pipeline-analysis.aux
+handbooks/proteomics/proteomics-pipeline-analysis.log
+handbooks/proteomics/proteomics-pipeline-analysis.out
+handbooks/proteomics/proteomics-pipeline-analysis.synctex.gz
+handbooks/proteomics/proteomics-pipeline-analysis.tex
