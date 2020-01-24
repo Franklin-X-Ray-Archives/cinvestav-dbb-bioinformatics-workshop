@@ -3,17 +3,17 @@
 <bioml>
  
 <note> DEFAULT PARAMETERS. The value of "isb_default_input_kscore.xml" is recommended. Change to "isb_default_input_native.xml" for native X!Tandem scoring.</note> 
-	<note type="input" label="list path, default parameters">C:\Inetpub\wwwroot\ISB\data\parameters\isb_default_input_kscore.xml</note>
+	<note type="input" label="list path, default parameters">C:\TPP\data\params\isb_default_input_kscore.xml</note>
 
 <note> FILE LOCATIONS. Replace them with your input (.mzXML) file and output file -- these are REQUIRED. Optionally a log file and a sequence output file of all protein sequences identified in the first-pass can be specified. Use of FULL path (not relative) paths is recommended. </note>
-	<note type="input" label="spectrum, path">C:\Inetpub\wwwroot\ISB\data\demo2009\tandem</note>
-	<note type="input" label="output, path">C:\Inetpub\wwwroot\ISB\data\demo2009\tandem</note>
+	<note type="input" label="spectrum, path">C:\TPP\data\dbase</note>
+	<note type="input" label="output, path">C:\TPP\data\dbase\tandem_output</note>
 	<note type="input" label="output, log path"></note>
 	<note type="input" label="output, sequence path"></note>
    	<note type="input" label="spectrum, threads">2</note>
 
 <note> TAXONOMY FILE. This is a file containing references to the sequence databases. Point it to your own taxonomy.xml if needed.</note>
-	<note type="input" label="list path, taxonomy information">C:\Inetpub\wwwroot\ISB\data\parameters\taxonomy.xml</note>
+	<note type="input" label="list path, taxonomy information">C:\TPP\data\params\taxonomy.xml</note>
 
 <note> PROTEIN SEQUENCE DATABASE. This refers to identifiers in the taxomony.xml, not the .fasta files themselves! Make sure the database you want is present as an entry in the taxonomy.xml referenced above. This is REQUIRED. </note>
 	<note type="input" label="protein, taxon">yeast_orfs_all_REV01_short</note>
